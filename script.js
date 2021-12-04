@@ -7,18 +7,28 @@ let arr = [
   "Лёша на полке клопа нашёл",
   "Я — арка края",
 ];
-function palindrom(arr) {
-  for (let i = 0; i < arr.length; i++) {
-    let str = arr[i].split("").reverse().join("");
-    if (str.toLowerCase === arr[i].toLowerCase) {
-      return arr[i];
-    }
+
+function palindrom(value) {
+  let v = value.toLowerCase();
+
+  //let res = v.replace(/ /g, "");
+
+  let arrFromStr = v.split("");
+  arrFromStr = arrFromStr.filter((val) =>
+    val.trim() == "" || val == "—" ? false : true
+  );
+  //   arrFromStr = arrFromStr.filter((val) => (val == "—" ? false : true));
+  console.log(arrFromStr);
+  let str = arrFromStr.join("");
+  let reversedArrFromStr = arrFromStr.reverse();
+  let reversedStr = reversedArrFromStr.join("");
+  console.log(str);
+  console.log(reversedStr);
+  if (str == reversedStr) {
+    return document.write(value + "<br>");
   }
 }
-let s = arr.filter(palindrom);
-for (let j = 0; j < s.length; j++) {
-  document.write(s[j] + "<br>");
-}
 
-// function reverseString(str) { return}
-// reverseString(str);
+const palindroms = arr.filter(palindrom);
+
+console.log(palindroms);
