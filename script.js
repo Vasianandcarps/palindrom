@@ -25,7 +25,7 @@ function palindrom(value) {
   console.log(str);
   console.log(reversedStr);
   if (str == reversedStr) {
-    return document.write(value + "<br>");
+    return true;
   }
 }
 
